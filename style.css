@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 * {
    padding: 0;
    margin: 0;
    box-sizing: border-box;
 }
-
+html {
+   font-family: 'Montserrat', sans-serif;
+}
 #content {
    width: 100%;
    max-width: 1024px;
@@ -21,6 +24,7 @@
    width: 100%;
    border: 1px solid #ccc;
    border-radius: 10px;
+   font-family: 'Montserrat', sans-serif;
 }
 #content .content-container #options,
 #content .content-container #create {
@@ -37,7 +41,7 @@
 }
 #content .content-container .btn {
    width: fit-content;
-   background-color: #3399ff;
+   background-color: #3057be;
    color: white;
    text-transform: uppercase;
 }
@@ -49,15 +53,14 @@
    margin-top: 20px;
    width: 100;
    height: 300px;
-   /* background-color: #ccc; */
    overflow-y: scroll;
 }
 #content .content-container #contact li {
    padding: 15px 20px;
    display: flex;
    justify-content: space-between;
-   background-color: #ccc;
    border-radius: 10px;
    font-size: 20px;
    margin-bottom: 20px;
+   background-color: #e6e6e6;
 }

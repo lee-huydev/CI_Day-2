@@ -26,7 +26,7 @@ console.log(countValue(data));
 
 // Bai 2
 const $ = document.querySelector.bind(document);
-const api = 'http://localhost:3000/contacts';
+const api = 'https://62660e73dbee37aff9ab8132.mockapi.io/api/contacts';
 const appContact = {
    // Function get API
    getApi: (callback) => {
