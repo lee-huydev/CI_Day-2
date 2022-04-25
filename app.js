@@ -29,7 +29,7 @@ const $ = document.querySelector.bind(document);
 const api = 'https://62660e73dbee37aff9ab8132.mockapi.io/api/contacts';
 const appContact = {
    // Function get API
-   getApi: (callback) => {
+   getApi(callback) {
       fetch(api)
          .then((response) => {
             return response.json();
@@ -39,7 +39,7 @@ const appContact = {
          });
    },
    // Functon Render
-   renderContacts: (contacts) => {
+   renderContacts(contacts) {
       const listContacts = $('.list-contacts');
       const htmls = contacts.map((e) => {
          return `
@@ -52,7 +52,7 @@ const appContact = {
       listContacts.innerHTML = htmls.join('');
    },
    // Function handle create contacts
-   handleCreateContacts: () => {
+   handleCreateContacts() {
       const btnCreate = $('.btn-create');
       btnCreate.addEventListener('click', () => {
          const nameContact = $('.name-contact').value;
@@ -89,7 +89,7 @@ const appContact = {
       });
    },
    // Function search contacts
-   handleSearchContact: function () {
+   handleSearchContact() {
       const btnSearch = $('.btn-search');
       const inputSearch = $('.input-search');
       inputSearch.onchange = () => {
@@ -109,7 +109,7 @@ const appContact = {
       };
    },
    // Function Filter element exist
-   filterElementExits: (arr, key) => {
+   filterElementExits(arr, key) {
       const newArr = arr
          .map((e) => e[key])
          .map((e, i, arr) => arr.indexOf(e) === i && i)
@@ -118,14 +118,14 @@ const appContact = {
       return newArr;
    },
    // Function get ID contacts
-   getIdContacts: (contacst) => {
+   getIdContacts(contacst) {
       const idContacts = contacst.map((e) => e.id);
       return idContacts;
    },
 
    // Function Method detele api
 
-   deleteApi: (id) => {
+   deleteApi(id) {
       const options = {
          method: 'DELETE',
          headers: {
@@ -135,7 +135,7 @@ const appContact = {
       fetch(api + '/' + id, options);
    },
    // Function delete already exits
-   handleDelete: function () {
+   handleDelete() {
       const btnDelete = $('.btn-delete');
       btnDelete.onclick = () => {
          this.getApi((contacts) => {
@@ -153,7 +153,7 @@ const appContact = {
    },
 
    // Function starts
-   starts: function () {
+   starts() {
       this.getApi((contacts) => {
          this.renderContacts(contacts);
       });
